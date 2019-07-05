@@ -1,0 +1,25 @@
+version: '3'
+services:
+  gocd-server:
+    image: gocd/gocd-server:v19.5.0
+    ports:
+      - "8153:8153"
+      - "8154:8154"
+    volumes:
+      - ./config/cruise-config.xml:/godata/config/cruise-config.xml
+  gocd-agent:
+    image: gocd/gocd-agent-centos-7:v19.5.0
+    environment:
+      AGENT_AUTO_REGISTER_KEY: e2448426-f0a5-47d7-ad24-baea0d138215
+      GO_SERVER_URL: https://gocd-server:8154/go
+#  gitlab:
+#    image: gitlab/gitlab-ce:11.2.4-ce.0
+#    ports:
+#      - "80:80"
+#      - "22:22"
+#    volumes:
+#      - 'gitlab-config:/etc/gitlab'
+#      - 'gitlab-data:/var/opt/gitlab'
+volumes:
+  gitlab-config:
+  gitlab-data:

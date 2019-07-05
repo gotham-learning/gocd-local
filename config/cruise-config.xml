@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cruise xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cruise-config.xsd" schemaVersion="124">
+  <server artifactsdir="artifacts" agentAutoRegisterKey="e2448426-f0a5-47d7-ad24-baea0d138215" webhookSecret="cd239750-90e9-4bdf-a910-06feb8e24da7" commandRepositoryLocation="default" serverId="0a5d3608-77a9-4a1a-a794-42b22dc510c4" tokenGenerationKey="1caabffa-fb4b-40c9-8f45-ab8cf44bc2c9">
+    <backup emailOnSuccess="true" emailOnFailure="true" />
+  </server>
+  <config-repos>
+    <config-repo pluginId="yaml.config.plugin" id="basic">
+      <git url="https://github.com/flosell/basic-gocd-pipeline.git" />
+    </config-repo>
+  </config-repos>
+  <pipelines group="defaultGroup">
+    <pipeline name="adfa">
+      <materials>
+        <git url="https://github.com/flosell/trailscraper.git" />
+      </materials>
+      <stage name="defaultStage">
+        <jobs>
+          <job name="defaultJob">
+            <tasks>
+              <exec command="ls" />
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
+    </pipeline>
+  </pipelines>
+  <pipelines group="example" />
+  <agents>
+    <agent hostname="32a254f3b61f" ipaddress="172.20.0.2" uuid="c16f60c6-c8d3-4876-8ec9-82d3bbf52d44" />
+  </agents>
+</cruise>
