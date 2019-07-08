@@ -8,24 +8,4 @@
       <git url="https://github.com/flosell/basic-gocd-pipeline.git" />
     </config-repo>
   </config-repos>
-  <pipelines group="defaultGroup">
-    <pipeline name="adfa">
-      <materials>
-        <git url="https://github.com/flosell/trailscraper.git" />
-      </materials>
-      <stage name="defaultStage">
-        <jobs>
-          <job name="defaultJob">
-            <tasks>
-              <exec command="ls" />
-            </tasks>
-          </job>
-        </jobs>
-      </stage>
-    </pipeline>
-  </pipelines>
-  <pipelines group="example" />
-  <agents>
-    <agent hostname="32a254f3b61f" ipaddress="172.20.0.2" uuid="c16f60c6-c8d3-4876-8ec9-82d3bbf52d44" />
-  </agents>
 </cruise>
