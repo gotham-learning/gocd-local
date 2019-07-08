@@ -5,7 +5,7 @@
   </server>
   <config-repos>
     <config-repo pluginId="yaml.config.plugin" id="basic">
-      <git url="https://github.com/flosell/basic-gocd-pipeline.git" />
+      <git url="https://github.com/gotham-learning/gocd-pipeline-config.git" />
     </config-repo>
   </config-repos>
 </cruise>

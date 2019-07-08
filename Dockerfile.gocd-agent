@@ -1,3 +1,8 @@
 FROM gocd/gocd-agent-centos-7:v19.5.0
 
 RUN yum install -y awscli
+
+# install nodejs
+RUN yum install -y gcc-c++ make
+RUN curl -sL https://rpm.nodesource.com/setup_12.x | bash -
+RUN yum install -y nodejs
