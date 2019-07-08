@@ -1,0 +1,3 @@
+FROM gocd/gocd-agent-centos-7:v19.5.0
+
+RUN yum install -y awscli
