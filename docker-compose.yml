@@ -12,14 +12,13 @@ services:
     environment:
       AGENT_AUTO_REGISTER_KEY: e2448426-f0a5-47d7-ad24-baea0d138215
       GO_SERVER_URL: https://gocd-server:8154/go
-#  gitlab:
-#    image: gitlab/gitlab-ce:11.2.4-ce.0
-#    ports:
-#      - "80:80"
-#      - "22:22"
-#    volumes:
-#      - 'gitlab-config:/etc/gitlab'
-#      - 'gitlab-data:/var/opt/gitlab'
+      # pass on environment variables from the host:
+      AWS_ACCESS_KEY_ID:
+      AWS_SECRET_ACCESS_KEY:
+      AWS_SESSION_TOKEN:
+      AWS_SECURITY_TOKEN:
+      AWS_REGION:
+      AWS_DEFAULT_REGION:
 volumes:
   gitlab-config:
   gitlab-data:
