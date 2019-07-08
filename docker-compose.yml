@@ -23,6 +23,8 @@ services:
       AWS_SECURITY_TOKEN:
       AWS_REGION:
       AWS_DEFAULT_REGION:
+    depends_on:
+      - gocd-server
 volumes:
   gitlab-config:
   gitlab-data:
